@@ -1,0 +1,41 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f2f5fa; color: #182230; }
+.page { max-width: 1100px; margin: 35px auto; padding: 0 16px; }
+.card { background: white; border-radius: 14px; box-shadow: 0 8px 30px #15223812; padding: 22px; }
+.auth { max-width: 420px; margin: 9vh auto; }
+h1 { margin: 0 0 8px; }
+p { color: #657184; }
+input { width: 100%; padding: 12px; border: 1px solid #d5dce6; border-radius: 8px; font-size: 15px; margin: 7px 0; }
+button { border: 0; background: #2457d6; color: white; padding: 11px 15px; border-radius: 8px; cursor: pointer; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+.secondary { background: #e9eef8; color: #22324b; }
+.danger { background: #c0392b; }
+.actions, .call-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.error { color: #c0392b; min-height: 18px; }
+.hidden { display: none; }
+header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #edf0f5; padding-bottom: 15px; }
+header small { color: #667085; }
+.layout { display: grid; grid-template-columns: 230px 1fr; gap: 20px; min-height: 600px; padding-top: 16px; }
+aside { border-right: 1px solid #edf0f5; padding-right: 15px; }
+.users { display: grid; gap: 7px; }
+.user { text-align: left; background: #f1f4f9; color: #1e293b; }
+.user.active { background: #dce7ff; outline: 1px solid #8eafff; }
+.user small { display: block; color: #657184; margin-top: 4px; }
+.conversation { min-width: 0; display: flex; flex-direction: column; }
+.conversation h2 { font-size: 18px; margin: 4px 0 12px; }
+.messages { flex: 1; min-height: 280px; max-height: 390px; overflow-y: auto; background: #f7f9fc; border-radius: 10px; padding: 12px; }
+.bubble { max-width: 78%; width: fit-content; padding: 9px 12px; border-radius: 12px; margin: 7px 0; overflow-wrap: anywhere; background: #e7ecf4; }
+.bubble.mine { margin-left: auto; background: #dce7ff; }
+.bubble small { display: block; color: #667085; margin-top: 5px; font-size: 11px; }
+.send { display: flex; gap: 8px; margin-top: 10px; }
+.send input { margin: 0; }
+.send button { min-width: 70px; }
+.status { min-height: 20px; }
+.videos { display: flex; gap: 10px; flex-wrap: wrap; }
+video { width: min(48%, 300px); min-height: 130px; background: #101827; border-radius: 10px; }
+@media (max-width: 700px) {
+  .page { margin: 12px auto; }
+  .layout { grid-template-columns: 1fr; }
+  aside { border-right: 0; border-bottom: 1px solid #edf0f5; padding: 0 0 14px; }
+  .users { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

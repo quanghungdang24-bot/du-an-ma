@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chat & Call</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="page">
+    <section id="authPanel" class="auth card">
+      <h1>Chat & Call</h1>
+      <p>Nhắn tin, gọi thoại và gọi video 1-1</p>
+      <input id="username" placeholder="Tên tài khoản (3-30 ký tự)" autocomplete="username">
+      <input id="password" type="password" placeholder="Mật khẩu (ít nhất 8 ký tự)" autocomplete="current-password">
+      <div class="actions">
+        <button id="loginBtn">Đăng nhập</button>
+        <button id="registerBtn" class="secondary">Tạo tài khoản</button>
+      </div>
+      <p id="authError" class="error"></p>
+    </section>
+
+    <section id="chatPanel" class="app card hidden">
+      <header>
+        <div><h1>Chat & Call</h1><small id="myName"></small></div>
+        <button id="logoutBtn" class="secondary">Đăng xuất</button>
+      </header>
+      <div class="layout">
+        <aside>
+          <h3>Người dùng</h3>
+          <div id="users" class="users">Đang tải...</div>
+        </aside>
+        <section class="conversation">
+          <h2 id="chatTitle">Chọn một người để trò chuyện</h2>
+          <div id="messages" class="messages"></div>
+          <form id="sendForm" class="send">
+            <input id="messageInput" maxlength="4000" placeholder="Nhập tin nhắn..." disabled>
+            <button id="sendBtn" disabled>Gửi</button>
+          </form>
+          <div class="call-actions">
+            <button id="voiceBtn" disabled>Gọi thoại</button>
+            <button id="videoBtn" disabled>Gọi video</button>
+            <button id="hangupBtn" class="danger" disabled>Kết thúc</button>
+          </div>
+          <p id="callStatus" class="status">Chưa có cuộc gọi</p>
+          <div class="videos">
+            <video id="remoteVideo" autoplay playsinline></video>
+            <video id="localVideo" autoplay muted playsinline></video>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
